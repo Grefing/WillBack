@@ -6,6 +6,7 @@ import './src/database/dbConnection'
 import usuariosRouter from "./src/routes/usuarios.routes";
 import likesRouter from "./src/routes/likes.routes";
 import verDespuesRouter from "./src/routes/verDespues.routes";
+import comentariosRouter from "./src/routes/comentarios.routes";
 
 const app = express();
 
@@ -29,5 +30,7 @@ app.use('/will/auth', usuariosRouter);
 app.use('/will/like', likesRouter)
 // http://localhost:4002/will/seeLater
 app.use('/will/seeLater', verDespuesRouter)
+// http://localhost:4002/will/comments
+app.use('/will/comments', comentariosRouter)
 
 
