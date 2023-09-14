@@ -19,6 +19,10 @@ const usuarioSchema = new Schema({
         type: String,
         minLength: 8,
         required: true,
+    },
+    fotoPerfil:{
+        type: String, 
+        default: 'https://static.vecteezy.com/system/resources/previews/008/844/895/non_2x/user-icon-design-free-png.png'
     }
 });
 
