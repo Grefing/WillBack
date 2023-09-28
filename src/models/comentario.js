@@ -1,25 +1,28 @@
-import { Schema, model } from "mongoose"
+import { Schema, model } from "mongoose";
 
 
 const comentSchema = new Schema({
-    idPelicula:{
+    idPelicula: {
         type: Number,
         required: true,
     },
-    idUsuario:{
+    descripcion: {
         type: String,
         required: true,
     },
-    nombreUsuario:{
-        type: String,
-        required: true,
+    hora: {
+        type: Date, 
+        default: Date.now,
     },
-    descripcion:{
-        type: String,
-        required: true,
-    },
-})
+    usuario: {
+        type: Schema.Types.ObjectId,
+        ref: "usuario"
+    }
+});
+
+
 
 const Comentario = model("comentario", comentSchema);
+
 
 export default Comentario;

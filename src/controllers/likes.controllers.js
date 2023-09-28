@@ -19,7 +19,9 @@ export const crearLike = async (req, res) =>{
 
 export const obtenerLike = async (req, res) =>{
 try {
-    const like = await Like.findById(req.params.id)
+    const idUsuario = req.params.idUsuario
+
+    const like = await Like.find({ idUsuario })
     res.status(200).json(like)
 
 } catch (e) {
@@ -29,6 +31,21 @@ try {
     })
 }
 }
+
+export const obtenerLikeId = async (req, res) =>{
+  try {
+  
+      const like = await Like.findById(req.params.id)
+      res.status(200).json(like)
+  
+  } catch (e) {
+      console.log(e);
+      res.status(404).json({
+          mensaje: "Error al obtener like"
+      })
+  }
+  }
+  
 
 export const obtenerLikes = async (req, res) => {
     try {
