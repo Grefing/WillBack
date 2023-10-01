@@ -12,6 +12,10 @@ idUsuario:{
 tipo:{
     type: String,
     required: true,
+},
+nombrePelicula:{
+    type: String,
+    required: true
 }
 });
 
