@@ -9,5 +9,4 @@ router.route("/nuevoLike").post(crearLike);
 router.route("/:idUsuario").get(obtenerLike)
 
 
-
 export default router;
